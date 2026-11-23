@@ -1,0 +1,616 @@
+@font-face {
+  font-family: "Henny Penny";
+  src: url("../Fonts/HennyPenny-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Oswald";
+  src: url("../Fonts/Oswald-VariableFont_wght.ttf") format("truetype");
+}
+
+:root {
+  --morado-oscuro: #19001f;
+  --morado: #3b004b;
+  --morado-claro: #984a99;
+  --verde: #00e000;
+  --blanco: #fff;
+  --naranja: #ff9800;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+    color: var(--blanco);
+    background-color: var(--morado);   
+  background-image: url("../Img/Fondo.png");
+           background-size: cover;
+           background-position: center;
+           background-repeat: no-repeat;
+           background-attachment: fixed;
+           min-height: 100vh;
+           font-family: "Oswald", Arial, sans-serif;
+       }
+ 
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+
+
+.navbar {
+    position: fixed;
+    top: 0; 
+    left: 0 !important;             
+    right: 0 !important;            
+    width: 100% !important;          
+    z-index: 10;
+    min-height: 75px;
+    padding: 12px 3%;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1fr;
+    align-items: center;
+    gap: 20px;
+    background-color: var(--morado-oscuro); 
+    border-bottom: 2px solid var(--verde);  
+
+}
+
+.brand-icons {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.brand-icons img {
+    width: 36px;
+    height: 29px;
+    object-fit: contain;
+    transition: transform .2s; 
+}
+
+
+.brand-icons img:hover {
+    transform: scale(1.12);
+}
+
+
+.site-title {
+    margin: 0;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: "Henny Penny", Georgia, serif;
+    font-size: clamp(14px, 1.7vw, 20px);
+    font-weight: 400;
+}
+
+.register-button {
+    justify-self: end;
+    display: inline-block;
+}
+
+.register-button img {
+    display: block;
+    width: 130px;
+    height: auto;
+    object-fit: contain;
+    transition: transform .25s;
+}
+
+.register-button:hover img {
+    transform: scale(1.06); 
+}
+
+.brand-icons a {
+    position: relative;
+}
+
+.brand-icons a::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    background-color: #19001f; 
+    color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+
+    font-family: "Oswald", sans-serif;
+    font-size: 13px;
+    white-space: nowrap;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s; /* Animación de aparición */
+    z-index: 100;
+}
+
+.brand-icons a:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+
+
+
+
+
+
+
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    color: var(--blanco);
+    background-color: var(--morado);       
+  background-image: url("../Img/Fondo.png");
+           background-size: cover;
+           background-position: center;
+           background-repeat: no-repeat;
+           background-attachment: fixed;
+           min-height: 100vh;
+           font-family: "Oswald", Arial, sans-serif;
+       }
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.hero {
+  width: min(82%, 1120px);
+  margin: 13px auto 15px;
+  position: relative;
+}
+
+.hero-image {
+  display: block;
+  width: 100%;
+  height: clamp(220px, 28vw, 330px);
+  object-fit: contain;
+  object-position: center;
+  border: 1px solid #ffffff30;
+  border-radius: 26px;
+  background-color: #26002f;
+  box-shadow: 0 5px 16px #16001c66;
+  animation: aparecer .55s ease;
+}
+
+.carousel-arrow {
+  position: absolute;
+  z-index: 1;
+  top: 28%;
+  border: 0;
+  background: transparent;
+  color: var(--verde);
+  font-size: 52px;
+  line-height: 1;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform .2s;
+}
+
+.carousel-arrow:hover {
+  transform: scale(1.25);
+}
+
+.previous { left: -38px; }
+.next { right: -38px; }
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 9px;
+  padding-top: 7px;
+}
+
+.dot {
+  width: 9px;
+  height: 9px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: var(--verde);
+  opacity: .65;
+  cursor: pointer;
+}
+
+.dot.active {
+  opacity: 1;
+  transform: scale(1.25);
+}
+
+.characters {
+  width: 94%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.character {
+  margin: 0 0 15px;
+}
+
+.character h2 {
+  margin: 0 0 3px 4%;
+  font-family: "Henny Penny", Georgia, serif;
+  font-size: clamp(23px, 3vw, 34px);
+  line-height: 1.15;
+  font-weight: 400;
+  text-shadow: 2px 2px 3px #18001e;
+}
+
+.character-content {
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  align-items: stretch;
+  gap: 14px;
+}
+
+.character-content img {
+  display: block;
+  width: 100%;
+  height: clamp(155px, 16vw, 185px);
+  object-fit: contain;
+  object-position: center;
+  padding: 6px;
+  border: 1px solid #ffffff30;
+  border-radius: 24px;
+  background-color: var(--morado-oscuro);
+  box-shadow: 0 4px 12px #16001c55;
+  transition: transform .3s, filter .3s, box-shadow .3s;
+}
+
+.character-content img:hover {
+  transform: scale(1.02);
+  filter: brightness(1.08);
+  box-shadow: 0 7px 18px #16001c88;
+}
+
+.character-content p {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 14px 18px;
+  min-height: clamp(155px, 16vw, 185px);
+  border-radius: 22px;
+  background-color: var(--morado-claro);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.35;
+  text-align: justify;
+  box-shadow: 0 3px 8px #16001c55;
+}
+/* ESTILOS VISUALES */
+.style-gallery{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:18px;
+    margin-top:16px;
+    
+}
+
+.style-card{
+    min-height:230px;
+    border-radius:18px;
+    overflow:hidden;
+    padding:20px;
+    display:flex;
+    align-items:flex-end;
+    border:1px solid #ffe1ee;
+    box-shadow:0 8px 18px rgba(255,105,180,0.14);
+    position:relative;
+    transition:0.3s;
+}
+
+.style-card:hover{
+    transform:translateY(-5px);
+}
+
+.style-card::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(180deg, transparent, rgba(0,0,0,0.50));
+}
+
+.style-card div{
+    position:relative;
+    color:white;
+}
+
+.style-card span{
+    text-transform:uppercase;
+    font-size:12px;
+    letter-spacing:2px;
+    font-weight:600;
+}
+
+.style-card h3{
+    font-family:'Playfair Display', Georgia, serif;
+    font-size:28px;
+    margin:4px 0;
+}
+
+.style-card p{
+    font-size:14px;
+    margin-bottom:0;
+}
+
+.soft-pop{
+    background:linear-gradient(135deg, #ffc7df, #ff7eb6);
+}
+
+.urban-night{
+    background:linear-gradient(135deg, #2b2139, #ff4f9a);
+}
+
+.indie-soft{
+    background:linear-gradient(135deg, #ffd8b8, #d9798b);
+}
+
+.retro-records{
+    background:linear-gradient(135deg, #3d2b26, #d8a15d);
+}
+
+.concert-glow{
+    background:linear-gradient(135deg, #1d1b45, #ff8fc0);
+}
+
+.playlist-mood{
+    background:linear-gradient(135deg, #b7e4f9, #ffb6d4);
+}
+
+/* CUESTIONARIO */
+.quiz {
+  width: min(92%, 850px);
+  margin: 28px auto;
+  padding: 20px;
+  text-align: center;
+  border: 2px solid var(--verde);
+  border-radius: 22px;
+  background-color: #290035ef;
+}
+
+.quiz h2 {
+  margin: 0 0 5px;
+  font-family: "Henny Penny", Georgia, serif;
+  font-size: 23px;
+}
+
+.quiz p {
+  margin: 5px 0 12px;
+}
+
+.quiz form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 9px;
+}
+
+.quiz h3 {
+  margin: 6px 0;
+  font-size: 17px;
+}
+
+.quiz label {
+  display: inline-block;
+}
+
+.quiz button {
+  margin-top: 7px;
+  padding: 8px 18px;
+  border: 0;
+  border-radius: 18px;
+  color: var(--morado-oscuro);
+  background-color: var(--naranja);
+  font-family: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform .2s, background-color .2s;
+}
+
+.quiz button:hover {
+  transform: scale(1.05);
+  background-color: #ffc04d;
+}
+
+.quiz-result {
+  min-height: 20px;
+  font-weight: bold;
+}
+
+/* PIE DE PÁGINA */
+.site-footer {
+  min-height: 65px;
+  display: grid;
+  grid-template-columns: 55px 1fr 110px;
+  align-items: center;
+  gap: 15px;
+  padding: 7px 4%;
+  border-top: 2px solid var(--verde);
+  background-color: var(--morado-oscuro);
+  text-align: center;
+}
+
+.footer-logo {
+  display: block;
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.footer-copy h2 {
+  margin: 0 0 4px;
+  font-family: "Henny Penny", Georgia, serif;
+  font-size: 16px;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.legal-links {
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+  font-size: 10px;
+}
+
+.legal-links a:hover {
+  color: var(--verde);
+}
+
+.social-links {
+  display: flex;
+  justify-content: end;
+  gap: 8px;
+}
+
+.social-links a {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  padding-top: 1px;
+  border-radius: 6px;
+  color: var(--morado-oscuro);
+  background-color: #e2a4ec;
+  font-family: Arial, sans-serif;
+  font-size: 17px;
+  font-weight: bold;
+  text-align: center;
+  transition: transform .2s;
+}
+
+.social-links a:hover {
+  transform: rotate(10deg) scale(1.12);
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* DISEÑO PARA CELULARES */
+@media (max-width: 650px) {
+  .navbar {
+    grid-template-columns: 1fr auto;
+    gap: 7px;
+    padding: 5px 4%;
+  }
+
+  .brand-icons { gap: 7px; }
+
+  .brand-icons img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .site-title {
+    grid-row: 2;
+    grid-column: 1 / -1;
+    font-size: 11px;
+    padding-bottom: 3px;
+  }
+
+  .register-button {
+    padding: 3px 14px 4px;
+    font-size: 12px;
+  }
+
+  .hero {
+    width: 84%;
+    margin-top: 12px;
+  }
+
+.hero-image {
+  height: 190px;
+  border-radius: 20px;
+}
+
+  .carousel-arrow {
+    top: 25%;
+    font-size: 43px;
+  }
+
+  .previous { left: -27px; }
+  .next { right: -27px; }
+
+  .characters { width: 92%; }
+  .character { margin-bottom: 16px; }
+
+  .character h2 {
+    margin-left: 5%;
+    font-size: 25px;
+  }
+
+  .character-content {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+.character-content img {
+  height: clamp(155px, 42vw, 190px);
+  border-radius: 22px;
+}
+
+  .character-content p {
+    min-height: auto;
+    padding: 12px 15px;
+    font-size: 13px;
+    line-height: 1.4;
+  }
+
+  .quiz { padding: 16px 12px; }
+  .quiz h2 { font-size: 19px; }
+
+  .site-footer {
+    grid-template-columns: 38px 1fr 70px;
+    gap: 7px;
+    padding-inline: 3%;
+  }
+
+  .footer-logo {
+    width: 36px;
+    height: 36px;
+  }
+
+  .footer-copy h2 { font-size: 12px; }
+
+  .legal-links {
+    flex-wrap: wrap;
+    gap: 3px 10px;
+    font-size: 9px;
+  }
+
+  .social-links { gap: 4px; }
+
+  .social-links a {
+    width: 20px;
+    height: 20px;
+    font-size: 14px;
+  }
+}
+/* Tipografía de lectura compartida para mantener la unidad entre páginas */
+p,
+li {
+    font-family: "Henny Penny", Georgia, serif;
+    font-size: 16px;
+    line-height: 1.6;
+}

@@ -1,0 +1,695 @@
+/* FUENTES */
+
+@font-face {
+    font-family: "Henny Penny";
+    src: url("../Fonts/HennyPenny-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Oswald";
+    src: url("../Fonts/Oswald-VariableFont_wght.ttf") format("truetype");
+}
+
+
+/* COLORES */
+
+:root {
+    --morado-oscuro: #19001f;
+    --morado: #3b004b;
+    --morado-claro: #984a99;
+    --verde: #00e000;
+    --blanco: #fff;
+    --naranja: #ff9800;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    color: var(--blanco);
+    background-color: var(--morado);   
+  background-image: url("../Img/Fondo.png");
+           background-size: cover;
+           background-position: center;
+           background-repeat: no-repeat;
+           background-attachment: fixed;
+           min-height: 100vh;
+           font-family: "Oswald", Arial, sans-serif;
+       }
+ 
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* MENU */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    min-height: 42px;
+    padding: 5px 2%;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1fr;
+    align-items: center;
+    gap: 15px;
+    background-color: var(--morado-oscuro);
+    border-bottom: 2px solid var(--verde);
+}
+
+.brand-icons {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand-icons img {
+    width: 30px;
+    height: 22px;
+    object-fit: contain;
+    transition: transform .2s;
+}
+
+.brand-icons img:hover {
+    transform: scale(1.12);
+}
+
+.site-title {
+    margin: 0;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: "Henny Penny", Georgia, serif;
+    font-size: clamp(10px, 1.3vw, 16px);
+    font-weight: 400;
+}
+
+.register-button {
+    justify-self: end;
+    display: inline-block;
+}
+
+.register-button img {
+    display: block;
+    width: 110px;
+    height: auto;
+    object-fit: contain;
+    transition: transform .25s;
+}
+
+.register-button:hover img {
+    transform: scale(1.06);
+}
+
+
+/* HEADER DE MERCANCIA */
+
+.merch-header {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.merch-header img {
+    display: block;
+    width: 100%;
+    max-height: 230px;
+    object-fit: cover;
+}
+
+
+/* INTRODUCCION */
+
+.merch-intro {
+    width: min(90%, 950px);
+    margin: 25px auto 35px;
+    text-align: center;
+}
+
+.merch-intro h2 {
+    margin: 0 0 10px;
+    color: var(--naranja);
+    font-family: "Henny Penny", Georgia, serif;
+    font-size: clamp(25px, 3vw, 34px);
+    font-weight: 400;
+    text-shadow: 2px 2px 3px #18001e;
+}
+
+.merch-intro p {
+    max-width: 750px;
+    margin: auto;
+    padding: 12px 20px;
+    border-radius: 22px;
+    background-color: var(--morado-claro);
+    font-size: clamp(13px, 1.3vw, 16px);
+    line-height: 1.4;
+    text-align: center;
+}
+
+
+/* CATEGORIAS */
+
+.merch-category {
+    width: min(92%, 1100px);
+    margin: 35px auto 45px;
+    scroll-margin-top: 65px;
+}
+
+.merch-category h2 {
+    margin: 0 0 18px 2%;
+    color: var(--verde);
+    font-family: "Henny Penny", Georgia, serif;
+    font-size: clamp(24px, 3vw, 32px);
+    font-weight: 400;
+    text-shadow: 2px 2px 3px #18001e;
+}
+
+
+/* PRODUCTOS */
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.product-card {
+    height: 245px;
+    padding: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border: 2px solid var(--morado-claro);
+    border-radius: 25px;
+    background-color: #290035eF;
+    box-shadow: 0 3px 8px #16001c55;
+    transition: transform .25s, border-color .25s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--verde);
+}
+
+.product-card img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform .3s;
+}
+
+.product-card:hover img {
+    transform: scale(1.04);
+}
+
+
+/* FOOTER ORIGINAL */
+
+.site-footer {
+    min-height: 65px;
+    display: grid;
+    grid-template-columns: 55px 1fr 110px;
+    align-items: center;
+    gap: 15px;
+    padding: 7px 4%;
+    border-top: 2px solid var(--verde);
+    background-color: var(--morado-oscuro);
+    text-align: center;
+}
+
+.footer-logo {
+    display: block;
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.footer-copy h2 {
+    margin: 0 0 4px;
+    font-family: "Henny Penny", Georgia, serif;
+    font-size: 16px;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.legal-links {
+    display: flex;
+    justify-content: center;
+    gap: 22px;
+    font-size: 10px;
+}
+
+.legal-links a:hover {
+    color: var(--verde);
+}
+
+.social-links {
+    display: flex;
+    justify-content: end;
+    gap: 8px;
+}
+
+.social-links a {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    padding-top: 1px;
+    border-radius: 6px;
+    color: var(--morado-oscuro);
+    background-color: #e2a4ec;
+    font-family: Arial, sans-serif;
+    font-size: 17px;
+    font-weight: bold;
+    text-align: center;
+    transition: transform .2s;
+}
+
+.social-links a:hover {
+    transform: rotate(10deg) scale(1.12);
+}
+
+
+/* ANIMACION */
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* TABLET Y MOVIL */
+
+@media (max-width: 650px) {
+
+    .navbar {
+        grid-template-columns: 1fr auto;
+        gap: 7px;
+        padding: 5px 4%;
+    }
+
+    .brand-icons {
+        gap: 7px;
+    }
+
+    .brand-icons img {
+        width: 24px;
+    }
+
+    .site-title {
+        grid-row: 2;
+        grid-column: 1 / -1;
+        font-size: 11px;
+        padding-bottom: 3px;
+    }
+
+    .register-button img {
+        width: 85px;
+    }
+
+    .merch-header img {
+        max-height: 150px;
+    }
+
+    .merch-intro {
+        margin: 20px auto 28px;
+    }
+
+    .merch-category {
+        margin: 28px auto 35px;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .product-card {
+        height: 190px;
+        padding: 8px;
+        border-radius: 18px;
+    }
+
+    .site-footer {
+        grid-template-columns: 38px 1fr 70px;
+        gap: 7px;
+        padding-inline: 3%;
+    }
+
+    .footer-logo {
+        width: 36px;
+        height: 36px;
+    }
+
+    .footer-copy h2 {
+        font-size: 12px;
+    }
+
+    .legal-links {
+        flex-wrap: wrap;
+        gap: 3px 10px;
+        font-size: 9px;
+    }
+
+    .social-links {
+        gap: 4px;
+    }
+
+    .social-links a {
+        width: 20px;
+        height: 20px;
+        font-size: 14px;
+    }
+}
+
+
+@media (max-width: 420px) {
+
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .product-card {
+        height: 230px;
+    }
+
+}
+
+
+/* =================================
+   AJUSTES DE TAMAÑO - MERCANCIA
+================================= */
+
+
+/* MENU SUPERIOR / HEADER */
+
+.navbar {
+    min-height: 75px;
+    padding: 12px 3%;
+    grid-template-columns: 1fr 1.5fr 1fr;
+    gap: 20px;
+}
+
+.brand-icons {
+    gap: 16px;
+}
+
+.brand-icons img {
+    width: 36px;
+    height: 29px;
+}
+
+.site-title {
+    font-size: clamp(14px, 1.7vw, 20px);
+}
+
+.register-button img {
+    width: 130px;
+}
+
+
+/* INTRODUCCION */
+
+.merch-intro {
+    width: min(92%, 1000px);
+    margin: 35px auto 45px;
+}
+
+.merch-intro h2 {
+    font-size: clamp(28px, 3.2vw, 38px);
+    margin-bottom: 15px;
+}
+
+.merch-intro p {
+    max-width: 850px;
+    padding: 16px 25px;
+    font-size: clamp(14px, 1.4vw, 17px);
+    line-height: 1.5;
+}
+
+
+/* SECCIONES */
+
+.merch-category {
+    width: min(94%, 1200px);
+    margin: 45px auto 60px;
+}
+
+.merch-category h2 {
+    font-size: clamp(27px, 3.2vw, 36px);
+    margin-bottom: 22px;
+}
+
+
+/* CUADRICULA DE PRODUCTOS */
+
+.product-grid {
+    gap: 24px;
+}
+
+.product-card {
+    height: 290px;
+    padding: 14px;
+    border-radius: 27px;
+}
+
+.product-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+
+/* FOOTER */
+
+.site-footer {
+    min-height: 90px;
+    grid-template-columns: 65px 1fr 125px;
+    gap: 20px;
+    padding: 13px 4%;
+}
+
+.footer-logo {
+    width: 60px;
+    height: 60px;
+}
+
+.footer-copy h2 {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.legal-links {
+    gap: 25px;
+    font-size: 11px;
+}
+
+.social-links {
+    gap: 10px;
+}
+
+.social-links a {
+    width: 27px;
+    height: 27px;
+    font-size: 18px;
+}
+
+
+/* TABLET Y MOVIL */
+
+@media (max-width: 650px) {
+
+    .navbar {
+        min-height: 65px;
+        grid-template-columns: 1fr auto;
+        padding: 9px 3%;
+        gap: 10px;
+    }
+
+    .brand-icons {
+        gap: 9px;
+    }
+
+    .brand-icons img {
+        width: 28px;
+        height: 25px;
+    }
+
+    .site-title {
+        font-size: 12px;
+        padding-bottom: 5px;
+    }
+
+    .register-button img {
+        width: 95px;
+    }
+
+    .merch-intro {
+        margin: 28px auto 35px;
+    }
+
+    .merch-intro p {
+        padding: 13px 16px;
+    }
+
+    .merch-category {
+        width: 93%;
+        margin: 35px auto 45px;
+    }
+
+    .merch-category h2 {
+        font-size: 27px;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+
+    .product-card {
+        height: 220px;
+        padding: 9px;
+        border-radius: 20px;
+    }
+
+    .site-footer {
+        min-height: 80px;
+        grid-template-columns: 42px 1fr 75px;
+        gap: 8px;
+        padding: 10px 3%;
+    }
+
+    .footer-logo {
+        width: 40px;
+        height: 40px;
+    }
+
+    .footer-copy h2 {
+        font-size: 13px;
+    }
+
+    .legal-links {
+        gap: 4px 10px;
+        font-size: 9px;
+    }
+
+    .social-links {
+        gap: 4px;
+    }
+
+    .social-links a {
+        width: 21px;
+        height: 21px;
+        font-size: 14px;
+    }
+}
+
+
+/* PANTALLAS PEQUEÑAS */
+
+@media (max-width: 420px) {
+
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .product-card {
+        height: 250px;
+    }
+
+    .brand-icons {
+        gap: 6px;
+    }
+
+    .brand-icons img {
+        width: 24px;
+    }
+
+}
+
+.merch-intro p {
+    max-width: 950px;
+    min-height: 90px;
+    padding: 25px 35px;
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+
+/* TITULOS DE CATEGORIAS EN PNG */
+.category-title {
+    display: block;
+    width: 230px;
+    height: auto;
+    margin: 0 auto 25px;
+    object-fit: contain;
+}
+
+/* ESPACIO DE LAS CATEGORIAS */
+.merch-category {
+    margin-top: 50px;
+    margin-bottom: 60px;
+}
+
+/* AJUSTE PARA PANTALLAS PEQUEÑAS */
+@media (max-width: 650px) {
+    .category-title {
+        width: 190px;
+        margin-bottom: 20px;
+    }
+}
+
+/* TEXTO ICONOS */
+.brand-icons a {
+    position: relative;
+}
+
+.brand-icons a::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    background-color: #19001f;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+
+    font-family: "Oswald", sans-serif;
+    font-size: 13px;
+    white-space: nowrap;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+    z-index: 100;
+}
+
+/* MOSTRAR TEXTO CURSOR */
+.brand-icons a:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Tipografía de lectura compartida para mantener la unidad entre páginas */
+p,
+li {
+    font-family: "Henny Penny", Georgia, serif;
+    font-size: 16px;
+    line-height: 1.6;
+}
